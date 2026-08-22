@@ -1,0 +1,146 @@
+@font-face {
+  font-family: Intervariable, sans-serif;
+  src: url(../fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+  font-family: Merriweather, serif;
+  src: url(../fonts/Merriweather-VariableFont_opsz\,wdth\,wght.ttf);
+}
+
+$font1: Intervariable, sans-serif;
+$font2: Merriweather, serif;
+$white1: rgb(243, 243, 243);
+$black1: rgb(17, 17, 17);
+$grey1: rgb(209, 209, 209);
+$grey2: rgb(233, 233, 233);
+$grey3: rgb(105, 105, 105);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@mixin title {
+  font-family: $font1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@mixin box-bottom {
+  p {
+    display: block;
+    font-style: italic;
+    color: $grey3;
+    margin: 15px auto;
+    width: 70%;
+  }
+  h3 {
+    display: block;
+    margin: 10px auto;
+    @include title;
+    width: 65%;
+  }
+  img {
+    width: 70%;
+    margin: 10px auto;
+  }
+  .paragraphe {
+    font-style: none;
+  }
+}
+
+@mixin input {
+  display: block;
+  background: $grey2;
+  border: 1px solid $grey1;
+  outline: none;
+  height: 40px;
+  margin-top: 10px;
+  width: 90%;
+  padding: 5px;
+}
+
+@mixin box-footer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border-bottom: 1px solid $grey1;
+  h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    font-family: $font1;
+    color: $grey3;
+  }
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font2;
+    color: $grey3;
+  }
+}
+
+body {
+  background: url(../img/bg.jpg) center/cover fixed;
+  text-align: center;
+  font-family: $font2;
+  max-width: 1300px;
+  margin: 0 auto;
+  user-select: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: $black1;
+    animation: animeBody 1.5s ease forwards;
+    animation-delay: 0.2s;
+
+    @keyframes animeBody {
+      to {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+a,
+a:visited {
+  color: white;
+}
+
+.btn {
+  @include title();
+  font-weight: bold;
+  background: transparent;
+  border: 1.5px solid black;
+  height: 50px;
+  min-width: 120px;
+  width: 50%;
+  max-width: 140px;
+  transition: 0.4s;
+  &:hover {
+    background: $black1;
+    color: $white1;
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(1.2);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+}

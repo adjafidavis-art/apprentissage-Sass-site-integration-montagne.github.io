@@ -1,0 +1,131 @@
+footer {
+  background: $grey2;
+  width: 85%;
+  min-height: 550px;
+  margin: 0 auto;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "l1"
+      "name"
+      "l2"
+      "email"
+      "l3"
+      "message"
+      "btn";
+    #l1 {
+      grid-area: l1;
+      text-align: left;
+      font-family: $font1;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $grey3;
+      margin-top: 10px;
+      margin-left: 20px;
+      padding-top: 10px;
+    }
+    #name {
+      @include input;
+      &:focus {
+        background: white;
+        color: $grey3;
+      }
+    }
+    #l2 {
+      grid-area: l2;
+      text-align: left;
+      font-family: $font1;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $grey3;
+      margin-left: 20px;
+      padding-top: 10px;
+    }
+    #email {
+      grid-area: email;
+      @include input;
+    }
+    #l3 {
+      text-align: left;
+      font-family: $font1;
+      font-size: 0.9rem;
+      grid-area: l3;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $grey3;
+      margin-left: 20px;
+      padding-top: 10px;
+    }
+    #message {
+      grid-area: message;
+      resize: none;
+      height: 200px;
+      width: 90%;
+      margin-top: 10px;
+      outline: none;
+      padding: 5px;
+      background: $grey2;
+      border: 1px solid $grey1;
+      &:focus {
+        background: white;
+        color: $grey3;
+      }
+    }
+    #btn {
+      grid-area: btn;
+      margin-top: 40px;
+      margin-left: 20px;
+    }
+  }
+  .contact {
+    display: grid;
+    border-left: 1px solid $grey1;
+    .box-footer-one {
+      @include box-footer;
+    }
+    .box-footer-two {
+      @include box-footer;
+    }
+    .box-footer-three {
+      @include box-footer;
+    }
+    .box-footer-four {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      h4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-size: 0.9rem;
+        font-family: $font1;
+        color: $grey3;
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 5px;
+        i {
+          cursor: pointer;
+          color: $black1;
+          transition: 0.5s;
+          width: 100%;
+          &:hover {
+            color: gray;
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+}

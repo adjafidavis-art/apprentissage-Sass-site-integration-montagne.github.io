@@ -1,0 +1,108 @@
+header {
+  min-height: 100vh;
+  position: relative;
+  color: $white1;
+  .titre-header-top {
+    min-height: 100vh;
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: animeHeader 1s forwards;
+
+    @keyframes animeHeader {
+      to {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+
+    h1 {
+      @include title;
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    svg {
+      cursor: pointer;
+      border: 2px solid $white1;
+      height: 40px;
+      width: 40px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      transition: 0.5s;
+
+      &:hover {
+        background: $white1;
+        fill: $black1;
+      }
+      &:active {
+        transform: scale(1.05);
+      }
+    }
+  }
+  nav {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.217);
+    width: 85%;
+    height: 65px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+
+    .nav-left {
+      ul {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        li {
+          font-weight: bold;
+          cursor: pointer;
+          @include title;
+          font-size: 0.6rem;
+          padding: 0 15px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          &:hover {
+            background: $white1;
+            color: $black1;
+          }
+        }
+      }
+    }
+    .nav-right {
+      width: 30%;
+      ul {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        li {
+          margin: 0 5px;
+          cursor: pointer;
+          font-size: 1.1rem;
+          transition: 0.4s;
+          &:hover {
+            transform: scale(1.2);
+          }
+          &:active {
+            transform: scale(1.3);
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
