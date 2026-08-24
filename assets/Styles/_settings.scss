@@ -119,6 +119,7 @@ a:visited {
 
 .btn {
   @include title();
+  cursor: pointer;
   font-weight: bold;
   background: transparent;
   border: 1.5px solid black;

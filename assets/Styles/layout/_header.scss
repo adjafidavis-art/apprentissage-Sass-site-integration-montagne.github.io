@@ -106,3 +106,29 @@ header {
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+  header {
+    .titre-header-top {
+      width: 65%;
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 0.7rem;
+      }
+      svg {
+        height: 32px;
+        width: 32px;
+      }
+    }
+    nav {
+      .nav-right {
+        display: none;
+      }
+    }
+  }
+}
