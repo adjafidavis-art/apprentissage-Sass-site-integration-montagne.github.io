@@ -132,3 +132,13 @@ header {
     }
   }
 }
+
+@media screen and (max-height: 315px) {
+  header {
+    .titre-header-top {
+      svg {
+        display: none;
+      }
+    }
+  }
+}

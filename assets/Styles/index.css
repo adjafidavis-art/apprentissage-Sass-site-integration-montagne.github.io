@@ -202,6 +202,11 @@ header nav .nav-right ul li:active {
     display: none;
   }
 }
+@media screen and (max-height: 315px) {
+  header .titre-header-top svg {
+    display: none;
+  }
+}
 main {
   background: rgb(243, 243, 243);
   width: 85%;
